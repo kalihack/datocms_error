@@ -30,7 +30,7 @@ query{
 
 `
 export  const getStaticProps = async() => {
-  const endPoint = 'https://www.datocms.com/'
+  const endPoint = 'https://graphql.datocms.com/'
   const graphQLClient = new GraphQLClient(endPoint,{
     headers:{
       "content-type":"application/json",
@@ -40,8 +40,6 @@ export  const getStaticProps = async() => {
   const course = await graphQLClient.request(query)
   console.log(course)
   return {
-    props:{
-      course
-    }
+    props: course
   }
 }
